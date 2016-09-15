@@ -190,7 +190,14 @@ console.log (objectAddition(sumObj));
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
 
+function printObj (object){
+var msg = "2 + 10 = 12";
+    console.log (msg);
+object.output = msg;
+return object;
+}
 
+console.log (printObj(sumObj));
 /*
     # Putting stuff in `plainBox`
         Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
