@@ -7,7 +7,13 @@
             - Add a property named `contents` and set it to be an empty array.
  */
 
+var plainBox = {};
 
+plainBox.color = "orange";
+plainBox.size = 15;
+plainBox.contents = [];
+
+console.log (plainBox);
 /*
     # An object with properties declared line by line
 
@@ -22,6 +28,8 @@
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
  */
+
+
 
 
 /*
