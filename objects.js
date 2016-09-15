@@ -30,7 +30,15 @@ console.log (plainBox);
  */
 
 
+var stockCar = {
+    model: "Ford",
+    year: 2015,
+    automaticTransmission: false,
+    driver: null,
+    passengers: []
+};
 
+console.log (stockCar);
 
 /*
     Add new property inside a function
