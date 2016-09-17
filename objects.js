@@ -191,7 +191,7 @@ console.log (objectAddition(sumObj));
  */
 
 function printObj (object){
-var msg = "2 + 10 = 12";
+var msg = object.a + " + " + object.b + " + = " + object.result;
     console.log (msg);
 object.output = msg;
 return object;
@@ -206,6 +206,19 @@ console.log (printObj(sumObj));
  */
 
 
+console.log (plainBox);
+
+function putInPlainBox (ject1){
+    for (var i = 0; i < 11; i++){
+        ject1.contents.push(Math.floor(Math.random()*100));
+    }
+    return ject1;
+}
+
+var plainBoxResult = putInPlainBox(plainBox);
+
+console.log (plainBoxResult);
+
 /*
     # Detecting transmission
         Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
@@ -216,6 +229,21 @@ console.log (printObj(sumObj));
  */
 
 
+function detectionTransmission (Obj){
+    var msg;
+    if (Obj.automaticTransmission === true){
+        msg = "automatic transmission";
+    }
+    else{
+        msg = "not automatic transmission";
+    }
+    Obj.isAutomaticTransmission = msg;
+    return Obj;
+}
+
+
+console.log (detectionTransmission(stockCar));
+
 /*
     # Who's driving this thing?!
         As you may have noticed that the `stockCar` doesn't have a driver!
@@ -225,6 +253,12 @@ console.log (printObj(sumObj));
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect your results. Consider using `plainPerson` as your driver.
  */
 
+function addDriver (car, person){
+    car.driver = person;
+    return car;
+}
+
+console.log (addDriver(stockCar, plainPerson));
 
 /*
     # Final Boss
@@ -259,3 +293,19 @@ console.log (printObj(sumObj));
         'Victor, age 19, is riding dirty!'
  */
 
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+
+function addPassengers (car, names, ages){
+    
+    for (var i = 0; i < names.length; i++){
+        car.passengers.push({
+            name: names[i],
+            age: ages[i]
+        });
+    }
+return car;
+}
+
+console.log (addPassengers(stockCar, passengerList, passengerAges));
