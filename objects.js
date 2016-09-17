@@ -63,7 +63,6 @@ function buildPerson (person, nameString, age){
     return person;
 }
 
-var plainPerson = {};
 
 console.log (buildPerson(plainPerson, "Zach", 24));
 /*
@@ -148,10 +147,9 @@ function printProcessedOrders(orders){
         console.log ("purchase date: ", orders[i].date);
         console.log ("purchase total: ", orders[i].total);
     }
-    return orders[i];
+    return orders;
 }
-
-console.log (printProcessedOrders(arrayOfObjects));
+printProcessedOrders(arrayOfObjects);
 
 /*
     # Addition with an object
@@ -209,8 +207,8 @@ console.log (printObj(sumObj));
 console.log (plainBox);
 
 function putInPlainBox (ject1){
-    for (var i = 0; i < 11; i++){
-        ject1.contents.push(Math.floor(Math.random()*100));
+    for (var i = 0; i < 10; i++){
+        ject1./* enter the object*/contents./* enter the property */push(Math.floor(Math.random()*100));
     }
     return ject1;
 }
@@ -293,10 +291,28 @@ console.log (addDriver(stockCar, plainPerson));
         'Victor, age 19, is riding dirty!'
  */
 
+
 var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
 
 var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
 
+
+//THE CLASS WAY TO DO IT. Better
+
+function addPassengers2 (car, person, birth){
+    for (var i = 0; i < person.length; i++){
+        var newPlainPerson = {};
+        car.passengers.push(buildPerson(newPlainPerson, person[i], birth[i]));
+    }
+    return car;
+}
+
+console.log (addPassengers2(stockCar, passengerList, passengerAges));
+
+
+
+
+//THE WAY I DID IT!!!
 function addPassengers (car, names, ages){
     
     for (var i = 0; i < names.length; i++){
@@ -309,3 +325,11 @@ return car;
 }
 
 console.log (addPassengers(stockCar, passengerList, passengerAges));
+
+function displayPassengers (car){
+    for (var i = 0; i < car.passengers.length; i++){
+        console.log (car.passengers[i].name + ", age " + car.passengers[i].age + ", is riding dirty!");
+    }
+}
+
+displayPassengers(stockCar);
